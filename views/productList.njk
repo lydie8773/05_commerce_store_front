@@ -1,0 +1,15 @@
+{% extends "layout.njk" %}
+
+{% block productList %}
+<div class="row text-center">
+  {% for product in productList %}
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="http://www.decathlon.ru/media/{{product.image_path}}" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text"><a href="/product/{{product.id}}">{{product.title}}</a></p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

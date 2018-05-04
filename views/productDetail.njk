@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+
+{% block productDetail %}
+{% for product in productDetail %}
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="http://www.decathlon.ru/media/{{product.image_path}}" alt="Card image cap">
+  </div>
+  <div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-body text-primary">
+      <p class="card-title">{{product.title}}</p>
+      <p class="card-text">{{product.min_price}}</p>
+      <p class="card-text"><input id="input-2" name="input-2" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="{{product.rating}}">
+</p>
+
+      <p class="card-text">
+
+        <input id="input-21d" value="{{product.rating}}" type="text" class="rating" data-min=0 data-max=5 data-step=0.5 data-size="sm" title="">
+      </p>
+      <p class="card-text">{{product.description}}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

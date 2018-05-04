@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block categories %}
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Categories</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for one_cate in categories %}
+      <tr>
+        <td>
+          <a href="/category/{{one_cate.id}}">
+            {{one_cate.label}}
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+{% endblock %}
