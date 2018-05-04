@@ -6,7 +6,14 @@ const PG = require("pg");
 // const conString = "postgres://camp2:camp2@localhost:5436/camp2";
 //
 // const client = new PG.Client(conString);
-const client = new PG.Client();
+
+const client = new PG.Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+
+// const client = new PG.Client();
 client.connect();
 
 // const totalBrands = 546;
