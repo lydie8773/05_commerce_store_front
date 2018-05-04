@@ -1,4 +1,4 @@
-const PG = require("pg");
+const { Client } = require("pg");
 // const getPosts = require("./handlers/getPosts")
 
 // const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5436/camp2';
@@ -7,7 +7,7 @@ const PG = require("pg");
 //
 // const client = new PG.Client(conString);
 
-const client = new PG.Client({
+const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
